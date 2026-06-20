@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucarelli Store — Moda de Pura elegancia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* =============================================
+       CONFIGURAÇÕES GERAIS — edite aqui as cores
+    ============================================= */
+    :root {
+      --preto:      #0D0D0D;
+      --bege:       #F5EDD6;
+      --dourado:    #C9A96E;
+      --cinza:      #8A8A8A;
+      --branco:     #FAFAFA;
+      --card-bg:    #161616;
+
+      /* Número do WhatsApp — EDITE AQUI */
+      --whatsapp:   "5511958134417"; /* sem + e sem espaços */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--preto);
+      color: var(--branco);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* =============================================
+       BARRA DE TOPO
+    ============================================= */
+    .topbar {
+      background: var(--dourado);
+      color: var(--preto);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+
+    /* =============================================
+       NAVEGAÇÃO
+    ============================================= */
+    nav {
+      position: fixed;
+      top: 36px;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 22px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(13, 13, 13, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+      transition: padding 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--branco);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--dourado); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(250, 250, 250, 0.7);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--dourado); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-whatsapp-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-whatsapp-nav:hover {
+      background: #1ebe5d;
+      transform: translateY(-1px);
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 100px;
+      background:
+        linear-gradient(135deg, rgba(201,169,110,0.08) 0%, transparent 60%),
+        linear-gradient(to bottom, #0D0D0D 0%, #111 100%);
+    }
+
+    /* Texto editorial vertical */
+    .hero-vertical-text {
+      position: absolute;
+      left: 36px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      transform-origin: center center;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cinza);
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 28px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--dourado);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(250,250,250,0.55);
+      max-width: 480px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--dourado);
+      color: var(--preto);
+      border: none;
+      border-radius: 100px;
+      padding: 16px 40px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: #e0bc7e;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--branco);
+      border: 1px solid rgba(250,250,250,0.25);
+      border-radius: 100px;
+      padding: 16px 40px;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--dourado);
+      color: var(--dourado);
+    }
+
+    /* Decoração hero */
+    .hero-deco {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-line {
+      position: absolute;
+      bottom: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: var(--cinza);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    .hero-line::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--dourado), transparent);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* =============================================
+       SEÇÃO CATEGORIAS
+    ============================================= */
+    .section {
+      padding: 100px 48px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .section-title em { font-style: italic; color: var(--dourado); }
+
+    .section-link {
+      color: var(--dourado);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(201,169,110,0.4);
+      padding-bottom: 4px;
+      transition: border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .section-link:hover { border-color: var(--dourado); }
+
+    /* =============================================
+       GRID DE PRODUTOS — CALÇAS
+    ============================================= */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,169,110,0.3);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+
+    /* Imagem do produto (fundo colorido com ícone SVG) */
+    .product-img {
+      width: 100%;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-img svg {
+      width: 120px;
+      opacity: 0.9;
+      transition: transform 0.35s;
+    }
+
+    img.product-img { object-fit: cover; }
+
+    /* Badges */
+    .badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--dourado);
+      color: var(--preto);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+
+    .badge.novo { background: var(--dourado); }
+    .badge.sale { background: #e05252; color: #fff; }
+
+    /* Favorito */
+    .btn-fav {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(13,13,13,0.7);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-fav:hover { background: rgba(201,169,110,0.2); }
+
+    /* Informações do produto */
+    .product-info {
+      padding: 22px 24px 24px;
+    }
+
+    .product-category {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cinza);
+      margin-bottom: 6px;
+    }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: var(--cinza);
+      margin-bottom: 16px;
+      line-height: 1.55;
+    }
+
+    /* Cores disponíveis */
+    .product-colors {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .color-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.15);
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .color-dot:hover { border-color: var(--dourado); transform: scale(1.2); }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .product-price {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-old {
+      font-size: 12px;
+      color: var(--cinza);
+      text-decoration: line-through;
+      line-height: 1;
+    }
+
+    .price-new {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--branco);
+      line-height: 1.1;
+    }
+
+    /* Botão WhatsApp — PRINCIPAL */
+    .btn-comprar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-comprar:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    /* =============================================
+       BANNER EDITORIAL
+    ============================================= */
+    .banner-editorial {
+      margin: 0 48px 100px;
+      border-radius: 24px;
+      background: linear-gradient(120deg, #1a1508 0%, #1e1a0e 50%, #0D0D0D 100%);
+      border: 1px solid rgba(201,169,110,0.2);
+      padding: 80px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner-editorial::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,169,110,0.10) 0%, transparent 70%);
+      right: -100px;
+      top: -100px;
+      pointer-events: none;
+    }
+
+    .banner-text { flex: 1; min-width: 260px; }
+
+    .banner-text .section-eyebrow { margin-bottom: 16px; }
+
+    .banner-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .banner-title em { font-style: italic; color: var(--dourado); }
+
+    .banner-sub {
+      font-size: 15px;
+      color: rgba(250,250,250,0.55);
+      max-width: 420px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .banner-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--dourado);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .stat-item span {
+      font-size: 12px;
+      color: var(--cinza);
+      letter-spacing: 0.08em;
+    }
+
+    /* =============================================
+       SEÇÃO DESTAQUES / TOPS
+    ============================================= */
+    .tops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: #080808;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 64px 48px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand .nav-logo {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 22px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--cinza);
+      line-height: 1.7;
+      max-width: 280px;
+      margin-bottom: 24px;
+    }
+
+    .footer-wpp {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(37,211,102,0.1);
+      border: 1px solid rgba(37,211,102,0.25);
+      border-radius: 100px;
+      padding: 10px 18px;
+      color: #25D366;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .footer-wpp:hover { background: rgba(37,211,102,0.18); }
+
+    .footer-col h4 {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--branco);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li { margin-bottom: 12px; }
+
+    .footer-col ul li a {
+      color: var(--cinza);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: var(--dourado); }
+
+    .footer-bottom {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p { font-size: 12px; color: var(--cinza); }
+
+    /* =============================================
+       RESPONSIVIDADE
+    ============================================= */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .nav-links { display: none; }
+      .section { padding: 72px 24px; }
+      .banner-editorial { margin: 0 24px 72px; padding: 48px 32px; }
+      footer { padding: 48px 24px 24px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .topbar { font-size: 11px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .tops-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; }
+      .banner-stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOPO ===== -->
+  <div class="topbar">✦ Leve 3 Calças e ganhe o frete gratis · Parcelamos em até 9x sem juros ✦</div>
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <a href="#" class="nav-logo">Lucarelli Store<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#calcas">Calças</a></li>
+      <li><a href="#tops">Tops</a></li>
+      <li><a href="#colecao">Coleção</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+    </ul>
+    <div class="nav-actions">
+      <!-- ✏️ EDITE SEU NÚMERO ABAIXO -->
+      <a
+        href="https://wa.me/551195813-4417?text=Olá!%20Vim%20pelo%20site%20MÀISON%20e%20gostaria%20de%20mais%20informações."
+        target="_blank"
+        class="btn-whatsapp-nav"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.088.534 4.05 1.473 5.762L.057 23.57a.5.5 0 0 0 .608.628l5.908-1.42A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.939 0-3.747-.528-5.29-1.444l-.379-.23-3.504.843.817-3.403-.247-.393A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-deco"></div>
+    <span class="hero-vertical-text">Coleção Verão 2025 · Exclusiva</span>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">✦ Nova Coleção Disponível</span>
+      <h1 class="hero-title">
+        Moda que<br/>define seu <em>estilo</em>
+      </h1>
+      <p class="hero-sub">
+        Peças exclusivas com tecidos selecionados, cortes precisos e design contemporâneo para quem valoriza elegância no dia a dia.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#calcas" class="btn-primary">Ver Calças</a>
+        <a href="#colecao" class="btn-outline">Explorar Coleção</a>
+      </div>
+    </div>
+
+    <div class="hero-line">Rolar</div>
+  </section>
+
+  <!-- ===== CALÇAS ===== -->
+  <section id="calcas">
+    <div class="section">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">✦ Destaque da Temporada</p>
+          <h2 class="section-title">Calças <em>Exclusivas</em></h2>
+        </div>
+        <a
+          href="https://wa.me/551195813-4417?text=Olá!%20Quero%20ver%20mais%20opções%20de%20calças%20da%20MÀISON."
+          target="_blank"
+          class="section-link"
+        >Ver tudo no WhatsApp →</a>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- PRODUTO 1 -->
+        <div class="product-card">
+          <div class="product-img" style="background: linear-gradient(135deg,#1a1a2e,#16213e);">
+            <span class="badge novo">Novo</span>
+            <button class="btn-fav" title="Favoritar">
+              <svg width="16" height="16" fill="none" stroke="#C9A96E" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <!-- Ícone calça SVG -->
+            <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="45" height="80" rx="4" fill="#C9A96E" opacity="0.9"/>
+              <rect x="65" y="10" width="45" height="80" rx="4" fill="#C9A96E" opacity="0.9"/>
+              <rect x="10" y="10" width="100" height="30" rx="4" fill="#b8915a"/>
+              <rect x="48" y="90" width="24" height="60" rx="4" fill="#C9A96E" opacity="0.6"/>
+              <rect x="20" y="85" width="33" height="75" rx="4" fill="#C9A96E" opacity="0.9"/>
+              <rect x="67" y="85" width="33" height="75" rx="4" fill="#C9A96E" opacity="0.9"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Calça · Feminina</p>
+            <h3 class="product-name">Calça Palazzo Caramelo</h3>
+            <p class="product-desc">Tecido leve e fluído, corte amplo. Perfeita para qualquer ocasião.</p>
+            <div class="product-colors">
+              <div class="color-dot" style="background:#C9A96E;" title="Caramelo"></div>
+              <div class="color-dot" style="background:#2c2c2c;" title="Preto"></div>
+              <div class="color-dot" style="background:#e8dfd0;" title="Areia"></div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-old">R$ 259,90</span>
+                <span class="price-new">R$ 189,90</span>
+              </div>
+              <!-- ✏️ EDITE SEU NÚMERO + MENSAGEM -->
+              <a
+                href="https://wa.me/5511958134417?text=Olá!%20Tenho%20interesse%20na%20*Calça%20Palazzo%20Caramelo*%20que%20vi%20no%20site.%20Pode%20me%20dar%20mais%20informações?"
+                target="_blank"
+                class="btn-comprar"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5 -.669 -.51 -.173 -.008 -.371 -.01 -.57 -.01 -.１９８ ０ -.５２ .０７４ -.７９２ .３７２ -.２７２ .２９７ -１.０４ １.０１６ -１.０４ ２.４７９ ０ １.４６２ １.０６５ ２.８７５ １.２１３ ３.０７４ .１４９ .１９８ ２.０９６ ３.２ ５.０７７ ４.４８７ .７０９ .３０６ １.２６２ .４８９ １.６９４ .６２５ .７１２ .２２７ １.３６ .１９５ １.８７１ .１１８ .５７１ -.０８５ １.７５８ -.７₁₉ ２.₀₀₆ -₁₄₁₃ .₂₄₈ -․₆₉₄ .₂₄₈ -₁₂₈₉ .₁₇₃ -₁₄₁₃ -․₀₇₄ -․₁₂₄ -․₂₇₂ -․₁₉₈ -․៥⁷ -․³⁴⁷z"/><path d="M₁₂ ₀C⁵³⁷³ ₀ ₀ ⁵³⁷³ ₀ ¹²c₀ ²⁰⁸⁸ .⁵³⁴ ⁴⁰⁵ ¹·⁴⁷³ ⁵·⁷⁶²L·₀⁵⁷ ²³·⁵⁷a·⁵·⁵ ₀ ₀ ₀ ·⁶₀ͺ ·⁶²ͺl⁵·¹¹⁻¹·¹²A¹¹·¹¹⁻¹¹·¹¹⁻¹²S¹²⁻²⁻²S¹²⁻²⁻²z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 2 -->
+        <div class="product-card">
+          <div class="product-img" style="background: linear-gradient(135deg,#0a1628,#112240);">
+            <span class="badge sale">-30%</span>
+            <button class="btn-fav" title="Favoritar">
+              <svg width="16" height="16" fill="none" stroke="#C9A96E" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="100" height="30" rx="4" fill="#233554"/>
+              <rect x="20" y="85" width="33" height="75" rx="4" fill="#4a90d9" opacity="0.85"/>
+              <rect x="67" y="85" width="33" height="75" rx="4" fill="#4a90d9" opacity="0.85"/>
+              <rect x="10" y="10" width="45" height="80" rx="4" fill="#3d7ec0" opacity="0.9"/>
+              <rect x="65" y="10" width="45" height="80" rx="4" fill="#3d7ec0" opacity="0.9"/>
+              <line x1="55" y1="10" x2="55" y2="90" stroke="#233554" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Calça · Jeans</p>
+            <h3 class="product-name">Calça Jeans Premium Slim</h3>
+            <p class="product-desc">Jeans de alta qualidade com elastano. Conforto e estilo no mesmo look.</p>
+            <div class="product-colors">
+              <div class="color-dot" style="background:#3d7ec0;" title="Azul médio"></div>
+              <div class="color-dot" style="background:#1a1a2e;" title="Dark blue"></div>
+              <div class="color-dot" style="background:#6b8eb5;" title="Claro"></div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-old">R$ 299,90</span>
+                <span class="price-new">R$ 209,90</span>
+              </div>
+              <a
+                href="https://wa.me/5511958134417?text=Olá!%20Tenho%20interesse%20na%20*Calça%20Jeans%20Premium%20Slim*%20que%20vi%20no%20site.%20Pode%20me%20dar%20mais%20informações?"
+                target="_blank"
+                class="btn-comprar"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52 -.075 -.149 -.669 -1.612 -.9₁₆ -₂.₂₀₇ -.₂₄₂ -.5₇₉ -.₄₈₇ -.₅ -.₆₆₉ -.₅₁ -.₁₇₃ -.₀₀₈ -.₃₇₁ -.₀₁ -.₅₇ -.₀₁ -.₁₉₈ ₀ -.⁵₂ .₀⁷⁴ -.⁷⁹₂ .³⁷² -.₂⁷² .²⁹⁷ -₁.₀⁴ ₁.₀¹⁶ -₁.₀⁴ ₂.⁴⁷₉ ₀ ₁.⁴⁶² ₁.₀⁶伍 ₂.⁸⁷伍 ₁.²¹³ ³.₀⁷肆 .¹肆玖 .¹玖捌 ₂.₀玖陆 ³.² 伍.₀柒柒 肆.肆捌柒 .７₀玖 .³⓪陆 壹.²陆贰 .肆捌玖 壹.陆玖肆 .陆²伍 .７¹贰 .²²柒 壹.³陆 .¹九伍 壹.捌柒壹 .¹¹捌 .៥柒壹 -․₀八伍 ₁。七伍捌 -․七壹玖 ₂。零零陆 -․二四捌 -․六九肆 -․二四捌 -₁。二八玖 -․一七叁 -₁。四一叁 -․零七肆 -․一二肆 -․二七贰 -․一九捌 -․五七 -․³⁴⁷z"/><path d="M₁₂ ₀C⁵³⁷³ ₀ ₀ ⁵³⁷³ ₀ ¹²c₀ ²⁰⁸⁸ .⁵³⁴ ⁴⁰⁵ ¹·⁴⁷³ ⁵·⁷⁶²L·₀⁵⁷ ²³·⁵⁷a·⁵·⁵ ₀ ₀ ₀ ·⁶₀ͺ ·⁶²ͺl⁵·¹¹⁻¹·¹²A¹¹·¹¹⁻¹¹·¹¹⁻¹²S¹²⁻²⁻²S¹²⁻²⁻²z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 3 -->
+        <div class="product-card">
+          <div class="product-img" style="background: linear-gradient(135deg,#1a0a0a,#2e1515);">
+            <span class="badge novo">Novo</span>
+            <button class="btn-fav" title="Favoritar">
+              <svg width="16" height="16" fill="none" stroke="#C9A96E" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="100" height="30" rx="4" fill="#4a1010"/>
+              <rect x="20" y="85" width="33" height="75" rx="4" fill="#c0392b" opacity="0.85"/>
+              <rect x="67" y="85" width="33" height="75" rx="4" fill="#c0392b" opacity="0.85"/>
+              <rect x="10" y="10" width="45" height="80" rx="4" fill="#e74c3c" opacity="0.8"/>
+              <rect x="65" y="10" width="45" height="80" rx="4" fill="#e74c3c" opacity="0.8"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Calça · Casual</p>
+            <h3 class="product-name">Calça Reta Vinho</h3>
+            <p class="product-desc">Corte reto clássico em tecido encorpado. Elegante do trabalho ao jantar.</p>
+            <div class="product-colors">
+              <div class="color-dot" style="background:#9b2335;" title="Vinho"></div>
+              <div class="color-dot" style="background:#1a1a1a;" title="Preto"></div>
+              <div class="color-dot" style="background:#5d3a4a;" title="Bordô"></div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-new">R$ 219,90</span>
+              </div>
+              <a
+                href="https://wa.me/5511958134417?text=Olá!%20Tenho%20interesse%20na%20*Calça%20Reta%20Vinho*%20que%20vi%20no%20site.%20Pode%20me%20dar%20mais%20informações?"
+                target="_blank"
+                class="btn-comprar"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52 -.075 -.149 -.669 -1.612 -.9₁₆ -₂.₂₀₇ -.₂₄₂ -.5₇₉ -.₄₈₇ -.₅ -.₆₆₉ -.₅₁ -.₁₇₃ -.₀₀₈ -.₃₇₁ -.₀₁ -.₅₇ -.₀₁ -.₁₉₈ ₀ -.⁵₂ .₀⁷⁴ -.⁷⁹₂ .³⁷² -.₂⁷² .²⁹⁷ -₁.₀⁴ ₁.₀¹⁶ -₁.₀⁴ ₂.⁴⁷₉ ₀ ₁.⁴⁶² ₁.₀⁶伍 ₂.⁸⁷伍 ₁.²¹³ ³.₀⁷肆 .¹肆玖 .¹玖捌 ₂.₀玖陆 ³.² 伍.₀柒柒 肆.肆捌柒 .７₀玖 .³⓪陆 壹.²陆贰 .肆捌玖 壹.陆玖肆 .陆²伍 .７¹贰 .²²柒 壹.³陆 .¹九伍 壹.捌柒壹 .¹１捌 .៥柒壹 -․₀八伍 ₁。七伍捌 -․七壹玖 ₂。零零陆 -․二四捌 -․六九肆 -․二四捌 -₁。二八玖 -․一七叁 -₁。四一叁 -․零七肆 -․一二肆 -․二七贰 -․一九捌 -․五七 -․³⁴⁷z"/><path d="M₁₂ ₀C⁵³⁷³ ₀ ₀ ⁵³⁷³ ₀ ¹²c₀ ²⁰⁸⁸ .⁵³⁴ ⁴⁰⁵ ¹·⁴⁷³ ⁵·⁷⁶²L·₀⁵⁷ ²³·⁵⁷a·⁵·⁵ ₀ ₀ ₀ ·⁶₀ͺ ·⁶²ͺl⁵·¹¹⁻¹·¹²A¹¹·¹¹⁻¹¹·¹¹⁻¹²S¹²⁻²⁻²S¹²⁻²⁻²z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 4 -->
+        <div class="product-card">
+          <div class="product-img" style="background: linear-gradient(135deg,#0d1a0d,#122212);">
+            <button class="btn-fav" title="Favoritar">
+              <svg width="16" height="16" fill="none" stroke="#C9A96E" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <svg viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="100" height="30" rx="4" fill="#1a3320"/>
+              <rect x="20" y="85" width="33" height="75" rx="4" fill="#2e7d32" opacity="0.85"/>
+              <rect x="67" y="85" width="33" height="75" rx="4" fill="#2e7d32" opacity="0.85"/>
+              <rect x="10" y="10" width="45" height="80" rx="4" fill="#388e3c" opacity="0.85"/>
+              <rect x="65" y="10" width="45" height="80" rx="4" fill="#388e3c" opacity="0.85"/>
+              <rect x="15" y="20" width="42" height="5" rx="2" fill="#1a3320" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Calça · Cargo</p>
+            <h3 class="product-name">Calça Cargo Verde Militar</h3>
+            <p class="product-desc">Estilo cargo com bolsos laterais e cós ajustável. Conforto e atitude.</p>
+            <div class="product-colors">
+              <div class="color-dot" style="background:#388e3c;" title="Verde militar"></div>
+              <div class="color-dot" style="background:#5d4037;" title="Terra"></div>
+              <div class="color-dot" style="background:#333;" title="Preto"></div>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <span class="price-old">R$ 279,90</span>
+                <span class="price-new">R$ 229,90</span>
+              </div>
+              <a
+                href="https://wa.me/5511958134417?text=Olá!%20Tenho%20interesse%20na%20*Calça%20Cargo%20Verde%20Militar*%20que%20vi%20no%20site.%20Pode%20me%20dar%20mais%20informações?"
+                target="_blank"
+                class="btn-comprar"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.２４２ -.５７９ -.４８７ -.５ -.６６９ -.５１ -.１７３ -.００８ -.３７１ -.０１ -.５７ -.０１ -.１９８ ₀ -.５２ .₀７４ -.７９２ .³⁷² -.２⁷² .²⁹⁷ -₁.₀⁴ ₁.₀¹⁶ -₁.₀⁴ ₂.⁴⁷₉ ₀ ₁.⁴⁶² ₁.₀⁶伍 ₂.⁸⁷伍 ₁.²¹³ ³.₀⁷肆 .¹肆玖 .¹玖捌 ₂.₀玖陆 ³.² 伍.₀柒柒 肆.肆捌柒 .７₀玖 .³⓪陆 壹.²陆贰 .肆捌玖 壹.陆玖肆 .陆²伍 .７¹贰 .²²柒 壹.³陆 .¹九伍 壹.捌柒壹 .¹１捌 .៥柒壹 -․₀八伍 ₁。七伍捌 -․七壹玖 ₂。零零陆 -․二四捌 -․六九肆 -․二四捌 -₁。二八玖 -․一七叁 -₁。四一叁 -․零七肆 -․一二肆 -․二七贰 -․一九捌 -․五七 -․³⁴⁷z"/><path d="M₁₂ ₀C⁵³⁷³ ₀ ₀ ⁵³⁷³ ₀ ¹²c₀ ²⁰⁸⁸ .⁵³⁴ ⁴⁰⁵ ¹·⁴⁷³ ⁵·⁷⁶²L·₀⁵⁷ ²³·⁵⁷a·⁵·⁵ ₀ ₀ ₀ ·⁶₀ͺ ·⁶²ͺl⁵·¹¹⁻¹·¹²A¹¹·¹¹⁻¹¹·¹¹⁻¹²S¹²⁻²⁻²S¹²⁻²⁻²z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BANNER EDITORIAL ===== -->
+  <div class="banner-editorial" id="sobre">
+    <div class="banner-text">
+      <p class="section-eyebrow">✦ Nossa história</p>
+      <h2 class="banner-title">Moda feita com<br/><em>propósito e cuidado</em></h2>
+      <p class="banner-sub">
+        Cada peça é pensada para durar — selecionamos fornecedores responsáveis, tecidos de qualidade e modelagens que valorizam todos os corpos.
+      </p>
+      <div class="banner-stats">
+        <div class="stat-item">
+          <strong>+2k</strong>
+          <span>Clientes satisfeitas</span>
+        </div>
+        <div class="stat-item">
+          <strong>98%</strong>
+          <span>Avaliações positivas</span>
+        </div>
+        <div class="stat-item">
+          <strong>5 anos</strong>
+          <span>No mercado</span>
+        </div>
+      </div>
+    </div>
+    <a
+      href="https://wa.me/5511958134417?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20MÀISON."
+      target="_blank"
+      class="btn-primary"
+      style="white-space:nowrap"
+    >Fale conosco</a>
+  </div>
+
+  <!-- ===== OUTRAS PEÇAS ===== -->
+  <section id="colecao">
+    <div class="section">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">✦ Complete o look</p>
+          <h2 class="section-title">Mais da <em>Coleção</em></h2>
+        </div>
+      </div>
+      <div class="tops-grid">
+
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#1a1a1a,#2a2a2a);height:220px">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:90px">
+              <path d="M10 40 Q30 20 60 20 Q90 20 110 40 L100 110 H20 Z" fill="#C9A96E" opacity="0.85"/>
+              <path d="M40 20 L50 50 L60 20 L70 50 L80 20" stroke="#b8915a" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Blusa · Feminina</p>
+            <h3 class="product-name">Blusa Ombro a Ombro</h3>
+            <div class="product-footer" style="margin-top:12px">
+              <span class="price-new" style="font-size:18px">R$ 129,90</span>
+              <a
+                href="https://wa.me/5511958134417?text=Olá!%20Tenho%20interesse%20na%20*Blusa%20Ombro%20a%20Ombro*%20que%20vi%20no%20site."
+                target="_blank"
+                class="btn-comprar"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52 -.075 -.149 -.669 -1.612 -.916 -2.207 -.２４２ -.５７９ -.４８７ -.５ -.６６９ -.５１ -.１７３ -.００８ -.３７１ -.０１ -.５７ -.０１ -.１９８ ₀ -.５２ .₀７４ -.７９２ .³⁷² -.２⁷² .²⁹⁷ -₁.₀⁴ ₁.₀¹⁶ -₁.₀⁴ ₂.⁴⁷₉ ₀ ₁.⁴⁶² ₁.₀⁶伍 ₂.⁸⁷伍 ₁.²¹³ ³.₀⁷肆 .¹肆玖 .¹玖捌 ₂.₀玖陆 ³.² 伍.₀柒柒 肆.肆捌柒 .７₀玖 .³⓪陆 壹.²陆贰 .肆捌玖 壹.陆玖肆 .陆²伍 .７¹贰 .²²柒 壹.³陆 .¹九伍 壹.捌柒壹 .¹１捌 .៥柒壹 -․₀八伍 ₁。七伍捌 -․七壹玖 ₂。零零陆 -․二四捌 -․六九肆 -․二四捌 -₁。二八玖 -․一七叁 -₁。四一叁 -․零七肆 -․一二肆 -․二七贰 -․一九捌 -․五七 -․³⁴⁷z"/><path d="M₁₂ ₀C⁵³⁷³ ₀ ₀ ⁵³⁷³ ₀ ¹²c₀ ²⁰⁸⁸ .⁵³⁴ ⁴⁰⁵ ¹·⁴⁷³ ⁵·⁷⁶²L·₀⁵⁷ ²³·⁵⁷a·⁵·⁵ ₀ ₀ ₀ ·⁶₀ͺ ·⁶²ͺl⁵·¹¹⁻¹·¹²A¹¹·¹¹⁻¹¹·¹¹⁻¹²S¹²⁻²⁻²S¹²⁻²⁻²z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#0d1020,#151a35);height:220px">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:90px">
+              <rect x="25" y="10" width="70" height="90" rx="8" fill="#6c84c0" opacity="0.9"/>
+              <rect x="30" y="10" width="60" height="20" rx="4" fill="#4a5fa0"/>
+              <line x1="60" y1="30" x2="60" y2="100" stroke="#4a5fa0" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Vestido · Longo</p>
+            <h3 class="product-name">Vestido Midi Azul</h3>
+            <div class="product-footer" style="margin-top:12px">
+              <span class="price-new" style="font-size:18px">R$ 249,90</span>
+              <a
+                href="https://wa.me/5511958134417?text=Olá!%20Tenho%20interesse%20no%20*Vestido%20Midi%20Azul*%20que%20vi%20no%20site."
+                target="_blank"
+                class="btn-comprar"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52 -.075 -.149 -.669 -1.612 -.916 -2.207 -.２４２ -.５７９ -.４８７ -.５ -.６６９ -.５１ -.１７３ -.００８ -.３７１ -.０１ -.５７ -.０１ -.１９８ ₀ -.５２ .₀７４ -.７９₂ .³⁷₂ -.２⁷² .²⁹⁷ -₁.₀⁴ ₁.₀¹⁶ -₁.₀⁴ ₂.⁴⁷₉ ₀ ₁.⁴⁶² ₁.₀⁶伍 ₂.⁸⁷伍 ₁.²¹³ ³.₀⁷肆 .¹肆玖 .¹玖捌 ₂.₀玖陆 ³.² 伍.₀柒柒 肆.肆捌柒 .７₀玖 .³⓪陆 壹.²陆贰 .肆捌玖 壹.陆玖肆 .陆²伍 .７¹贰 .²²柒 壹.³陆 .¹九伍 壹.捌柒壹 .¹１捌 .៥柒壹 -․₀八伍 ₁。七伍捌 -․七壹玖 ₂。零零陆 -․二四捌 -․六九肆 -․二四捌 -₁。二八玖 -․一七叁 -₁。四一叁 -․零七肆 -․一二肆 -․二七贰 -․一九捌 -․五七 -․³⁴⁷z"/><path d="M₁₂ ₀C⁵³⁷³ ₀ ₀ ⁵³⁷³ ₀ ¹²c₀ ²⁰⁸⁸ .⁵³⁴ ⁴⁰⁵ ¹·⁴⁷³ ⁵·⁷⁶²L·₀⁵⁷ ²³·⁵⁷a·⁵·⁵ ₀ ₀ ₀ ·⁶₀ͺ ·⁶²ͺl⁵·¹¹⁻¹·¹²A¹¹·¹¹⁻¹¹·¹¹⁻¹²S¹²⁻²⁻²S¹²⁻²⁻²z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#1a1510,#2a2218);height:220px">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:90px">
+              <path d="M20 50 L10 20 L40 30 L60 15 L80 30 L110 20 L100 50 L90 100 H30 Z" fill="#8B7355" opacity="0.9"/>
+              <line x1="40" y1="30" x2="35" y2="100" stroke="#6b5535" stroke-width="1.5"/>
+              <line x1="80" y1="30" x2="85" y2="100" stroke="#6b5535" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Blazer · Feminino</p>
+            <h3 class="product-name">Blazer Structured Caramelo</h3>
+            <div class="product-footer" style="margin-top:12px">
+              <span class="price-new" style="font-size:18px">R$ 349,90</span>
+              <a
+                href="https://wa.me/5511958134417?text=Olá!%20Tenho%20interesse%20no%20*Blazer%20Structured%20Caramelo*%20que%20vi%20no%20site."
+                target="_blank"
+                class="btn-comprar"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52 -.075 -.149 -.669 -1.612 -.916 -2.207 -.２４２ -.５７９ -.４８７ -.５ -.６６９ -.５１ -.１７３ -.００８ -.３７１ -.０１ -.５７ -.０１ -.１９８ ₀ -.５２ .₀７４ -.７９₂ .³⁷₂ -.２⁷² .²⁹⁷ -₁.₀⁴ ₁.₀¹⁶ -₁.₀⁴ ₂.⁴⁷₉ ₀ ₁.⁴⁶² ₁.₀⁶伍 ₂.⁸⁷伍 ₁.²¹³ ³.₀⁷肆 .¹肆玖 .¹玖捌 ₂.₀玖陆 ³.² 伍.₀柒柒 肆.肆捌柒 .７₀玖 .³⓪陆 壹.²陆贰 .肆捌玖 壹.陆玖肆 .陆²伍 .７¹贰 .²²柒 壹.³陆 .¹九伍 壹.捌柒壹 .¹１捌 .៥柒壹 -․₀八伍 ₁。七伍捌 -․七壹玖 ₂。零零陆 -․二四捌 -․六九肆 -․二四捌 -₁。二八玖 -․一七叁 -₁。四一叁 -․零七肆 -․一二肆 -․二七贰 -․一九捌 -․五七 -․³⁴⁷z"/><path d="M₁₂ ₀C⁵³⁷³ ₀ ₀ ⁵³⁷³ ₀ ¹²c₀ ²⁰⁸⁸ .⁵³⁴ ⁴⁰⁵ ¹·⁴⁷³ ⁵·⁷⁶²L·₀⁵⁷ ²³·⁵⁷a·⁵·⁵ ₀ ₀ ₀ ·⁶₀ͺ ·⁶²ͺl⁵·¹¹⁻¹·¹²A¹¹·¹¹⁻¹¹·¹¹⁻¹²S¹²⁻²⁻²S¹²⁻²⁻²z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#150e1a,#220e2e);height:220px">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:90px">
+              <ellipse cx="60" cy="60" rx="44" ry="55" fill="#8b4a9e" opacity="0.85"/>
+              <ellipse cx="60" cy="28" rx="20" ry="18" fill="#6a2f7a"/>
+              <path d="M30 60 Q60 110 90 60" stroke="#6a2f7a" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Saia · Midi</p>
+            <h3 class="product-name">Saia Evasê Lilás</h3>
+            <div class="product-footer" style="margin-top:12px">
+              <span class="price-new" style="font-size:18px">R$ 159,90</span>
+              <a
+                href="https://wa.me/5511958134417?text=Olá!%20Tenho%20interesse%20na%20*Saia%20Evasê%20Lilás*%20que%20vi%20no%20site."
+                target="_blank"
+                class="btn-comprar"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52 -.075 -.149 -.669 -1.612 -.916 -2.207 -.２４２ -.５７９ -.４８７ -.５ -.６６９ -.５１ -.１７３ -.００８ -.３７１ -.０１ -.５７ -.０１ -.１９８ ₀ -.５２ .₀７４ -.７９₂ .³⁷₂ -.２⁷² .²⁹⁷ -₁.₀⁴ ₁.₀¹⁶ -₁.₀⁴ ₂.⁴⁷₉ ₀ ₁.⁴⁶² ₁.₀⁶伍 ₂.⁸⁷伍 ₁.²¹³ ³.₀⁷肆 .¹肆玖 .¹玖捌 ₂.₀玖陆 ³.² 伍.₀柒柒 肆.肆捌柒 .７₀玖 .³⓪陆 壹.²陆贰 .肆捌玖 壹.陆玖肆 .陆²伍 .７¹贰 .²²柒 壹.³陆 .¹九伍 壹.捌柒壹 .¹１捌 .៥柒壹 -․₀八伍 ₁。七伍捌 -․七壹玖 ₂。零零陆 -․二四捌 -․六九肆 -․二四捌 -₁。二八玖 -․一七叁 -₁。四一叁 -․零七肆 -․一二肆 -․二七贰 -․一九捌 -․五七 -․³⁴⁷z"/><path d="M₁₂ ₀C⁵³⁷³ ₀ ₀ ⁵³⁷³ ₀ ¹²c₀ ²⁰⁸⁸ .⁵³⁴ ⁴⁰⁵ ¹·⁴⁷³ ⁵·⁷⁶²L·₀⁵⁷ ²³·⁵⁷a·⁵·⁵ ₀ ₀ ₀ ·⁶₀ͺ ·⁶²ͺl⁵·¹¹⁻¹·¹²A¹¹·¹¹⁻¹¹·¹¹⁻¹²S¹²⁻²⁻²S¹²⁻²⁻²z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">MÀISON<span style="color:var(--dourado)">.</span></a>
+        <p>Moda contemporânea com identidade. Peças exclusivas para quem vive com intenção e estilo.</p>
+        <a
+          href="https://wa.me/5511958134417?text=Olá!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20MÀISON."
+          target="_blank"
+          class="footer-wpp"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52 -.075 -.149 -.669 -1.612 -.916 -2.207 -.２４２ -.５７９ -.４８７ -.５ -.６６９ -.５１ -.１７３ -.００８ -.３７１ -.０１ -.５７ -.０１ -.１９８ ₀ -.５２ .₀７４ -.７９₂ .³⁷₂ -.２⁷² .²⁹⁷ -₁.₀⁴ ₁.₀¹⁶ -₁.₀⁴ ₂.⁴⁷₉ ₀ ₁.⁴⁶² ₁.₀⁶伍 ₂.⁸⁷伍 ₁.²¹³ ³.₀⁷肆 .¹肆玖 .¹玖捌 ₂.₀玖陆 ³.² 伍.₀柒柒 肆.肆捌柒 .７₀玖 .³⓪陆 壹.²陆贰 .肆捌玖 壹.陆玖肆 .陆²伍 .７¹贰 .²²柒 壹.³陆 .¹九伍 壹.捌柒壹 .¹１捌 .៥柒壹 -․₀八伍 ₁。七伍捌 -․七壹玖 ₂。零零陆 -․二四捌 -․六九肆 -․二四捌 -₁。二八玖 -․一七叁 -₁。四一叁 -․零七肆 -․一二肆 -․二七贰 -․一九捌 -․五七 -․³⁴⁷z"/><path d="M₁₂ ₀C⁵³⁷³ ₀ ₀ ⁵³⁷³ ₀ ¹²c₀ ²⁰⁸⁸ .⁵³⁴ ⁴⁰⁵ ¹·⁴⁷³ ⁵·⁷⁶²L·₀⁵⁷ ²³·⁵⁷a·⁵·⁵ ₀ ₀ ₀ ·⁶₀ͺ ·⁶²ͺl⁵·¹¹⁻¹·¹²A¹¹·¹¹⁻¹¹·¹¹⁻¹²S¹²⁻²⁻²S¹²⁻²⁻²z"/></svg>
+          Fale pelo WhatsApp
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="#calcas">Calças</a></li>
+          <li><a href="#colecao">Blusas</a></li>
+          <li><a href="#colecao">Vestidos</a></li>
+          <li><a href="#colecao">Blazers</a></li>
+          <li><a href="#colecao">Saias</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Atendimento</h4>
+        <ul>
+          <li><a href="https://wa.me/5511958134417?text=Olá!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20MÀISON." target="_blank">WhatsApp</a></li>
+          <li><a href="#">Política de troca</a></li>
+          <li><a href="#">Entrega e prazo</a></li>
+          <li><a href="#">Tamanhos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Redes</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">Pinterest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MÀISON. Todos os direitos reservados.</p>
+      <p>Desenvolvido com ♥ — Edit com VS Code</p>
+    </div>
+  </footer>
+
+</body>
+</html>
